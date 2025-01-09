@@ -1,14 +1,14 @@
-.campo-texto {
+.ListaSuspensa {
     margin: 24px 0px;
 }
 
-.campo-texto label {
+.ListaSuspensa label {
     display: block;
     margin-bottom: 8px;
     font-size: 20px;
 }
 
-.campo-texto input {
+.ListaSuspensa select {
     background-color: #fff;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
     width: 100%;
