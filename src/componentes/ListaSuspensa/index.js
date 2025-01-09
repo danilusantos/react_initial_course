@@ -5,10 +5,9 @@ const ListaSuspensa = (props) => {
     return (
         <div className="ListaSuspensa">
             <label>{props.label}</label>
-            <select>
-                <option key="0">Selecione</option>
+            <select required={props.obrigatorio}>
                 {props.itens.map((item) => {
-                    return <option key={item.value}>{item.value}</option>;
+                    return <option key={item.key}>{item.value}</option>;
                 })}
             </select>
         </div>
@@ -18,6 +17,7 @@ const ListaSuspensa = (props) => {
 ListaSuspensa.propTypes = {
     label: PropTypes.string.isRequired,
     itens: PropTypes.array,
+    obrigatorio: PropTypes.bool,
 };
 
 export default ListaSuspensa;

@@ -5,10 +5,18 @@ const CampoTexto = (props) => {
     const label = props.label;
     const placeholder = props.placeholder;
 
+    const aoDigitar = (event) => {
+        console.log(event.target.value);
+    };
+
     return (
         <div className="campo-texto">
             <label>{label}</label>
-            <input placeholder={placeholder} />
+            <input
+                placeholder={placeholder}
+                required={props.obrigatorio}
+                onChange={aoDigitar}
+            />
         </div>
     );
 };
@@ -16,6 +24,7 @@ const CampoTexto = (props) => {
 CampoTexto.propTypes = {
     label: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
+    obrigatorio: PropTypes.bool,
 };
 
 export default CampoTexto;
