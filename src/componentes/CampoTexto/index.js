@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
 import './CampoTexto.css';
+import { useState } from 'react';
 
 const CampoTexto = (props) => {
     const label = props.label;
     const placeholder = props.placeholder;
 
+    const [valor, setValor] = useState('Danilo Santos');
+
     const aoDigitar = (event) => {
-        console.log(event.target.value);
+        setValor(event.target.value);
     };
 
     return (
@@ -16,6 +19,7 @@ const CampoTexto = (props) => {
                 placeholder={placeholder}
                 required={props.obrigatorio}
                 onChange={aoDigitar}
+                value={valor}
             />
         </div>
     );
