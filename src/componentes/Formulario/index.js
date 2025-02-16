@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types';
 import { MdAddCircleOutline } from 'react-icons/md';
 import './Formulario.css';
 import CampoTexto from '../CampoTexto';
 import ListaSuspensa from '../ListaSuspensa';
 import Botao from '../Botao';
+import { useState } from 'react';
 
 const Formulario = () => {
     const times = [
@@ -14,9 +14,14 @@ const Formulario = () => {
         { key: 4, value: 'Flamengo eSports' },
     ];
 
+    const [nome, setNome] = useState('');
+    const [rota, setRota] = useState('');
+    const [imagem, setImagem] = useState('');
+    const [time, setTime] = useState('');
+
     const aoSalvar = (event) => {
         event.preventDefault();
-        console.log('Form foi submetido');
+        console.log('Form foi submetido => ', { nome, rota, imagem, time });
     };
 
     return (
@@ -27,17 +32,29 @@ const Formulario = () => {
                     obrigatorio={true}
                     label="Nome do campeão"
                     placeholder="Digite o nome do campeão"
+                    valor={nome}
+                    aoAlterado={(valor) => setNome(valor)}
                 />
                 <CampoTexto
                     obrigatorio={true}
                     label="Rota"
                     placeholder="Digite sua rota"
+                    valor={rota}
+                    aoAlterado={(valor) => setRota(valor)}
                 />
                 <CampoTexto
                     label="Imagem"
                     placeholder="Digite o endereço da imagem"
+                    valor={imagem}
+                    aoAlterado={(valor) => setImagem(valor)}
                 />
-                <ListaSuspensa obrigatorio={true} label="Times" itens={times} />
+                <ListaSuspensa
+                    obrigatorio={true}
+                    label="Times"
+                    itens={times}
+                    valor={time}
+                    aoAlterado={(valor) => setTime(valor)}
+                />
                 <Botao>
                     <p>
                         <MdAddCircleOutline size={30} />
@@ -48,7 +65,5 @@ const Formulario = () => {
         </section>
     );
 };
-
-Formulario.propTypes = {};
 
 export default Formulario;
