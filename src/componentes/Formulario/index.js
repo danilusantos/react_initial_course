@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { MdAddCircleOutline } from 'react-icons/md';
 import './Formulario.css';
 import CampoTexto from '../CampoTexto';
@@ -5,7 +6,7 @@ import ListaSuspensa from '../ListaSuspensa';
 import Botao from '../Botao';
 import { useState } from 'react';
 
-const Formulario = () => {
+const Formulario = (props) => {
     const times = [
         { key: '', value: 'Selecione' },
         { key: 1, value: 'Red Canidis' },
@@ -21,7 +22,12 @@ const Formulario = () => {
 
     const aoSalvar = (event) => {
         event.preventDefault();
-        console.log('Form foi submetido => ', { nome, rota, imagem, time });
+        props.aoColaboradorCadastrado({
+            nome,
+            rota,
+            imagem,
+            time,
+        });
     };
 
     return (
@@ -64,6 +70,10 @@ const Formulario = () => {
             </form>
         </section>
     );
+};
+
+Formulario.propTypes = {
+    aoColaboradorCadastrado: PropTypes.func,
 };
 
 export default Formulario;
