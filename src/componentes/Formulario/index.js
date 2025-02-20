@@ -7,14 +7,6 @@ import Botao from '../Botao';
 import { useState } from 'react';
 
 const Formulario = (props) => {
-    const times = [
-        { key: '', value: 'Selecione' },
-        { key: 1, value: 'Red Canidis' },
-        { key: 2, value: 'Vivo Keyd' },
-        { key: 3, value: 'PAIN Gaming' },
-        { key: 4, value: 'Flamengo eSports' },
-    ];
-
     const [nome, setNome] = useState('');
     const [rota, setRota] = useState('');
     const [imagem, setImagem] = useState('');
@@ -57,7 +49,7 @@ const Formulario = (props) => {
                 <ListaSuspensa
                     obrigatorio={true}
                     label="Times"
-                    itens={times}
+                    itens={props.times}
                     valor={time}
                     aoAlterado={(valor) => setTime(valor)}
                 />
@@ -74,6 +66,7 @@ const Formulario = (props) => {
 
 Formulario.propTypes = {
     aoColaboradorCadastrado: PropTypes.func,
+    times: PropTypes.array,
 };
 
 export default Formulario;

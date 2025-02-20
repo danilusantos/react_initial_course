@@ -1,0 +1,10 @@
+.time {
+    text-align: center;
+    padding: 32px;
+}
+
+.time h2 {
+    font-size: 32px;
+    border-bottom: 4px solid transparent;
+    display: inline-block;
+}
