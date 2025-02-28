@@ -1,0 +1,60 @@
+.Rodape {
+    background-color: #5068f1;
+    padding: 32px 64px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Rodape .creditos {
+    display: flex;
+    align-items: center;
+}
+
+.Rodape .creditos p {
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 400;
+    padding: 0 8px;
+    margin: 0px;
+}
+
+.Rodape .creditos a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.Rodape .redes-sociais {
+    display: flex;
+    align-items: center;
+}
+
+.Rodape .redes-sociais ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.Rodape .redes-sociais li {
+    margin: 0px 16px;
+}
+
+.Rodape .redes-sociais li img {
+    width: 16px;
+    height: 16px;
+}
+
+.Rodape .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Rodape .logo img {
+    width: 100px;
+}
