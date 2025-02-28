@@ -1,10 +1,22 @@
-.time {
+.Time {
     text-align: center;
     padding: 32px;
 }
 
-.time h2 {
+.Time h2 {
     font-size: 32px;
     border-bottom: 4px solid transparent;
     display: inline-block;
+}
+
+.Time .colaboradores {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.Time .colaboradores .colaborador {
+    margin: 16px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
 }

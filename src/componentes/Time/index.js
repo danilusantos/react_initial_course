@@ -1,20 +1,29 @@
 import { PropTypes } from 'prop-types';
 import './Time.css';
+import Colaborador from '../Colaborador';
 
 const Time = (props) => {
     return (
         <section
             key={props.key}
             style={{ backgroundColor: props.corSecundaria }}
-            className="time"
+            className="Time"
         >
             <h2 style={{ borderBottomColor: props.corPrimaria }}>
                 {props.nome}
             </h2>
 
-            <ul>
+            <ul className="colaboradores">
                 {props.colaboradores.map((colaborador) => (
-                    <li key={colaborador.key}>{colaborador.nome}</li>
+                    <li className="colaborador" key={colaborador.nome}>
+                        <Colaborador
+                            key={colaborador.nome}
+                            nome={colaborador.nome}
+                            imagem={colaborador.imagem}
+                            corPrimaria={props.corPrimaria}
+                            rota={colaborador.rota}
+                        />
+                    </li>
                 ))}
             </ul>
         </section>

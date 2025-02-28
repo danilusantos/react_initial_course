@@ -20,6 +20,13 @@ const Formulario = (props) => {
             imagem,
             time,
         });
+        redefinirFormulario();
+    };
+
+    const redefinirFormulario = () => {
+        setNome('');
+        setRota('');
+        setImagem('');
     };
 
     return (
