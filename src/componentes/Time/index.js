@@ -6,7 +6,7 @@ const Time = ({ key, nome, corPrimaria, corSecundaria, colaboradores }) => {
     return (
         colaboradores.length > 0 && (
             <section
-                key={key}
+                key={nome + key}
                 style={{ backgroundColor: corSecundaria }}
                 className="Time"
             >

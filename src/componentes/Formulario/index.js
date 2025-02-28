@@ -27,6 +27,7 @@ const Formulario = (props) => {
         setNome('');
         setRota('');
         setImagem('');
+        setTime('');
     };
 
     return (
